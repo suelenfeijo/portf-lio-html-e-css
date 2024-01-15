@@ -1,0 +1,499 @@
+/*ESTILO BLOCO GERAL*/
+/* -> aplicando elementos para todo o site*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  /*aplicando regra de css para font*/
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: black;
+  /*fazer o corpo tomar todo o espaço da tela*/
+  height: 100vh;
+
+  /*limitar os limites do header da classe interface*/
+}
+.flex {
+  display: flex;
+}
+.interface {
+  max-width: 1280px;
+  /*1 - topo , 2 lateral */
+  margin: 0px auto;
+}
+.btn-contato button {
+  padding: 10px 30px;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #00ff08;
+  /*removendo borda preta do botton*/
+  border: 0;
+  /*arredondando borda*/
+  border-radius: 30px;
+  /*mãozinho do ponteiro*/
+  cursor: pointer;
+  /*tempo de transição para acontecer hover (mudança de cor e o zoom*/
+  transition: 0.2s;
+}
+/*animação geral do button*/
+ button:hover,form .btn-enviar input:hover {
+  /*1 -> vertical 2 -> horizantais  3 -> espalhamento do sombreado 4-> cor*/
+  box-shadow: 0 0 16px #00ff08;
+  /*zoom*/
+  transform: scale(1.05);
+}
+h2.titulo {
+  color: white;
+  font-size: 34px;
+  text-align: center;
+}
+h2.titulo span {
+  color: #00ff08;
+}
+
+/*ESTILO DO CABEÇALHO*/
+
+header {
+  /*para não ficar muito colado nas laterais, quando diminuir o tamanho da tela não vai colar, 40px em cima e embaixo e 4% na esquerda e direita*/
+  padding: 40px 4%;
+} /*aplicando o display flex apenas na .class-interface que está aninhada dentro do header
+com o sinal de > */
+header > .interface {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /*estilizando todos os links dentro do header*/
+}
+header a {
+  /*removendo linha sublinhada do link*/
+  text-decoration: none;
+  color: rgb(117, 117, 117);
+  display: inline-block;
+}
+/*quando o usuário passar o mouser por cima , vai acontecer alguma coisa*/
+header a.menu-desktop:hover {
+  /*a cor vai mudar*/
+  color: white;
+  /*para dar o zoom, vai aumentar conforme a scale 1.05
+    essa tag funciona apenas para itens que são inline-block, oque 
+    não é o caso dos links (a) , por isso é preciso converter*/
+  transform: scale(1.05);
+  /*suavizando o tempo para acontecer a transição*/
+  transition: 0.2s;
+}
+
+header nav ul {
+  /*removendo estilização (bolinha) da lista*/
+  list-style: none;
+}
+header nav.menu-desktop li {
+  /*fazendo os itens da lista (ul do header) em linha*/
+  display: inline-block;
+  /*aplicando espaçamento entre elas 0 -> em cima e embaixo, esquerda e direita -> 40px*/
+  padding: 0 40px;
+}
+
+/*ESTILO MENU MOBILE*/
+.menu-mobile{
+  background: black;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  transition: .2s;
+
+
+  /*por padrão o width é 0 por que só é ativado quando acionado no js*/
+  width: 0%;
+  overflow: hidden;
+}.menu-mobile.abrir-menu{
+  width: 70%;
+}.menu-mobile.abrir-menu ~ .overlay-menu-mobile{
+display: block;
+
+}.menu-mobile nav ul{
+text-align: right;
+
+
+}.menu-mobile nav ul li a{
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 20px 10%;
+  /*faz a linha de fundo verde tomar todo o espaço da palavra*/
+  display: block;
+}.menu-mobile nav ul li a:hover{
+  background-color: #00ff08;
+  color: #000;
+  font-weight: 700;
+}.menu-mobile .btn-fechar i{
+  color: #00ff08;
+  font-size: 30px;
+
+
+}.btn-fechar {
+  padding: 20px 6%;
+}.btn-abrir-menu i{
+  color: #00ff08;
+  font-size: 40px;
+}.overlay-menu-mobile {
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 888;
+  background-color: rgb(0, 0, 0);
+  opacity: 50%;
+  /*por padrão o display é none, só é ativado quando abre o icon menu*/
+  display: none;
+}
+
+
+
+
+/*ESTILO TOPO DO SITE*/
+
+section .topo-do-site {
+  padding: 40px 4%;
+}
+section .topo-do-site .flex {
+  /*aplicando estilização exclusiva para a classe flex*/
+  align-items: center;
+  justify-content: center;
+  /*espaçamento entre os elemntos */
+  gap: 90px;
+}
+.topo-do-site .txt-topo-site h1 {
+  color: white;
+  font-size: 42px;
+  /*diminuindo espaço entre linhas*/
+  line-height: 40px;
+}
+.topo-do-site .txt-topo-site h1 span {
+  color: #00ff08;
+}
+.topo-do-site .txt-topo-site p {
+  color: white;
+  margin: 40px 0px;
+}
+.topo-do-site .img-topo-site img {
+  /*top, bottom, esquerda e direita, só funciona se a posição não estiver padrão, que é static:
+; relative, fixed, absolut*/
+  position: relative;
+  /*1 nome da animacao - 2 tempo para a animacao ser concluida - 3 tempo de saida e entrada da animacao(velocidade)
+  -  4 animar infinitamente - 5 alternando e não ir abruptamente do 0 ao 100 ou do 100 ao 0
+  - 6  */
+  animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+/*animações do css , chama os keyframes e da o nome para a animação*/
+@keyframes flutuar {
+  /*como ela estará no estado inicial ao entrar o site*/
+  0% {
+    top: 0px;
+  }
+  /*quando ela estiver acabandp*/
+  100% {
+    top: 30px;
+  }
+}
+
+/*ESTILO DAS ESPECIALIDADES*/
+section.especialidades {
+  padding: 120px 4%;
+}section.especialidades .flex{
+  gap: 60px;
+}
+.especialidades .especialidades-box {
+  color: white;
+  padding: 40px;
+  /*espessura borda, sólida, cor*/
+ /* border: 2px solid white;*/
+  
+  margin-top: 45px;
+
+  border-radius: 20px;
+  background-color: rgb(0, 0, 0);
+
+  transition: .2s;
+}.especialidades .especialidades-box:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.522);
+}
+.especialidades .especialidades-box i {
+  font-size: 60px;
+  color: #00ff08;
+}
+.especialidades .especialidades-box h3 {
+  font-size: 28px;
+  /*1 em cima e embaixo - 2 laterais*/
+  margin: 15px 0px;
+}/*ESTILO SOBRE*/
+
+
+
+section.sobre{
+padding: 80px 4%;
+}section.sobre .flex{
+align-items: center;
+gap: 60px;
+
+}.sobre .txt-sobre{
+  color: white;
+
+}.sobre .txt-sobre h2{
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 30px;
+}.sobre .txt-sobre h2 span{
+  color: #00ff08;
+  /*faz o span ficar na linha de baixo inline (cima) block (baixo)*/
+  display: block;
+}.sobre .txt-sobre p{
+  margin: 20px 0;
+
+  /*justificar texto*/
+  text-align: justify;
+} .btn-social button{
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  border: none;
+  background-color: #00ff08;
+  font-size: 22px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: .2s;
+
+}/*ESTILO PORTFOLIO*/
+
+section.portfolio{
+  padding: 80px 4%;
+  /*horizontal - vertical - desfoque - espalhamento(tam. sombra) - cor*/
+  box-shadow:  0 0 40px 10px rgba(255, 255, 255, 0.083);
+}section.portfolio .flex{
+gap:80px;
+/*  justify-content: space-around;*/
+  margin-top: 60px;
+}.img-port{
+  width: 360px;
+  height: 460px;
+  background-color: #00ff08;
+
+  /*a imagem já se adapta*/
+  background-size: cover;
+  /*1 - posicionamento horizontal eicho horizontal, x - vertical = 0 eicho y*/
+  background-position: 100% 0%;
+
+  /*tempo de transição para mudança do hover*/
+  transition: 8s;
+
+  border-radius: 40px;
+  cursor: pointer;
+
+  /*importante para o efeito overlay funcionar*/
+  position: relative;
+
+}.img-port:hover{
+  /*animação acontece por que a vertical é definida em 100% na vertical*/
+  background-position: 100% 100%;
+}.overlay{
+  /*a overlay só trabalha dentro da img-port por causa do relative*/
+  position: absolute;
+  /*distacia da parte de cima*/
+  top: 0;
+  /*deslocamento do lado esquerdo*/
+  left: 0;
+
+  /*tamanho*/
+  width: 100%;
+  height: 100%;
+
+  background-color: #000000c2;
+  /**/
+  border-radius: 40px;
+  /*alinhando o texto "projeto" no centro*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  /*opacity se inicia no 0 e muda no hover*/
+  opacity: 0;
+  /*velocidade da transição*/
+  transition: .5s;
+}.overlay:hover{
+    /*opacity overlay aparece quando passa o mouser*/
+  opacity: 1;
+}
+
+
+/*ESTILO FORMULARIO DE CONTATO*/
+
+section.formulario{
+padding: 80px 4%;
+}form{
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
+
+}form input , form textarea{
+  width: 100%;
+  background-color: rgba(105, 105, 105, 0.32);
+  border: none;
+  outline: 0;
+  padding: 20px 15px;
+  border-radius:15px ;
+  color: white;
+  font-size: 18px;
+  
+}form input::placeholder{
+  /*estilizar cor do placeholder*/
+}form textarea{
+  /*não redimendionsar*/
+  resize: none;
+  /*tamanho máximo altura do textarea*/
+  max-height: 200px;
+}/*estilizar botão*/
+form .btn-enviar {
+  margin-top: 20px;
+  text-align: center;
+}form .btn-enviar input{
+  width: 120px;
+  background-color: #00ff08;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  transition:  .2s;
+}/*ESTILO RODAPÉ*/
+
+footer{
+  padding: 40px 4%;
+  box-shadow:  0 0 40px 10px rgba(255, 255, 255, 0.083);
+
+
+} footer .flex{
+  /*só funciona com display flex*/
+  justify-content: space-between;
+
+
+}.borda{
+  border-top: 2px solid #00ff08;
+
+}footer .line-footer{
+padding: 20px 0;
+
+}footer .line-footer p i{
+  color: #00ff08;
+  font-size: 20px;
+}footer .line-footer p a{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+@media screen and (min-width: 768px) and (max-width:800px){
+  section.portfolio {
+    padding: 80px 28%;
+}
+}
+@media screen and (max-width: 1020px){
+
+  /*classes gerais*/
+  .flex{
+    /*determina a direção do flex - o column reverse inverte a ordem , no caso, aqui iverte a odem em 
+    coluna*/
+    flex-direction: column;
+  }
+  h2.titulo {
+    font-size: 28px;
+  
+    line-height: 34px;
+}
+
+  header img{
+    width: 140px;
+  }
+  /*CABEÇALHO*/
+  .menu-desktop ,.btn-contato{
+    display: none;
+  }
+
+  .topo-do-site .flex{
+    flex-direction: column-reverse;
+  }
+
+  section.topo-do-site{
+    padding: 80px 5%;
+  }
+.img-topo-site img{
+    padding: 10px     0px; 
+    width: 300px;
+  
+
+    /*para alterar o h1 tive que chamar a classe pai (a section) e depois a classe pai dos textos e em
+    seguida o h1*/
+  }.topo-do-site .txt-topo-site h1{
+    font-size: 30px;
+  }
+
+section.especialidades{
+  padding: 40px 8%;
+}
+
+.sobre .txt-sobre h2 {
+ font-size: 35px;
+ line-height: 38px;
+}
+.sobre .txt-sobre h2 span {
+  color: #00ff08;
+  display: block;
+}
+
+section.sobre .flex {
+  gap: 20px;
+  padding: 20px 30px;
+}
+
+section.formulario {
+  padding: 80px 15%;
+}form {
+  max-width: 700px;
+  margin: 40px 0px 0px;
+  gap: 20px;
+  position: relative;
+  right: 13px;
+}footer .flex{
+  flex-direction: column;
+  gap: 30px;
+}footer .line-footer{
+  text-align: center;
+}footer .btn-social button {
+ 
+  width: 80px;
+  height: 80px;
+
+  position: relative;
+  bottom: 40px;
+
+  border-radius: 40px;
+  border: none;
+  background-color: rgb(0, 255, 8);
+  font-size: 22px;
+  cursor: pointer;
+  margin: 0px 10px;
+  transition: all 0.2s ease 0s
+ 
+}
+}

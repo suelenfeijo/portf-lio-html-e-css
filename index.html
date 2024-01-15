@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <script src="menu.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!--fim google fonts-->
+
+    <link rel="stylesheet" href="style.css" />
+    <!--bootstrap icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- fim bootstrap icons-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suelen Feijó</title>
+  </head>
+  <body>
+    <!--inicio header dividido em 3 partes, trabalhado com display flex-->
+
+    <header>
+      <!--div de separação do header-->
+      <div class="interface">
+        <div class="logo">
+          <a href="#" class="href">
+            <img src="images/REC-Logótipo-removebg-preview.png" alt="logo" />
+          </a>
+        </div>
+        <!--fechamento div.logo-->
+
+        <nav class="menu-desktop">
+          <!--lista não ordenada-->
+          <ul>
+            <!--itens da lista não ordenada-->
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Especialidades</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </nav>
+
+        <!--fim menu-desktop-->
+        <div class="btn-abrir-menu" id="btn-menu"><i class="bi bi-list"></i></div>
+        <DIV class="menu-mobile" id="menu-mobile">
+        
+          <div class="btn-fechar">
+            <i class="bi bi-x-lg"></i>
+          </div>
+        
+          <nav>
+            <!--lista não ordenada-->
+            <ul>
+              <!--itens da lista não ordenada-->
+              <li><a href="#">Início</a></li>
+              <li><a href="#">Especialidades</a></li>
+              <li><a href="#">Sobre</a></li>
+              <li><a href="#">Projetos</a></li>
+              <li><a href="#">Contato</a></li>
+  
+            </ul>
+          </nav>
+  
+        </DIV><!--"fim menu-mobile"-->
+
+        <div class="overlay-menu-mobile" id="overlay-menu-mobile">
+
+        </div><!--overlay-menu-->
+      </div>
+
+     
+      <!--fechamento div interface-->
+    </header>
+
+    <!--cada página só poder uma tag main, que é o conteúdo principal-->
+
+    <main>
+      <!--essa section será divida em 2 com o display flex -->
+      <section class="topo-do-site">
+        <!--delimitar as laterais do site, usei a interface para padrão global-->
+        <div class="interface">
+          <!--classe padrão, que dentro tem um display flex para usar varias vezes-->
+        
+        
+          <div class="flex">
+            <!--texto do lado esquerdo-->
+            <div class="txt-topo-site">
+              <!--O ponto final é verde, pra isso usams o span trabalhada no css-->
+              <h1>TRANSFORMANDO IDEIAS EM REALIDADE DIGITAL <span>.</span></h1>
+              <p>
+                A criação de projetos digitais revolucionou a forma como
+                desenvolvemos software. A partir de uma ideia simples,
+                transformamos-a em realidade através da criação de interfaces
+                digitais interativas e personalizadas.
+              </p>
+              <div class="btn-contato">
+                <a href="#">
+                  <button>Entre em contato</button>
+                </a>
+              </div>
+              <!--fim btn-contato-->
+
+             
+            </div>
+            <!--fim txt-topo-site-->
+
+            <!--img lado direito-->
+            <div class="img-topo-site">
+              <img src="images/REC-Logótipo-removebg-preview.png" alt="pessoa" />
+            </div>
+            <!--fim img-topo-site-->
+          </div>
+          <!--fim flex-->
+        </div>
+        <!--fim interface-->
+      </section>
+      <!--fim topo-do-site-->
+
+      <section class="especialidades">
+        <div class="interface">
+          <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
+          <div class="flex">
+            <div class="especialidades-box">
+              <!--icon code-->
+              <i class="bi bi-code-square"></i>
+              <h3>Website</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Ratione, animi.
+              </p>
+              <!--fim especialidades-box-->
+            </div>
+            <div class="especialidades-box">
+              <!--icon cart-->
+              <i class="bi bi-cart"></i>
+              <h3>Loja Online</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Ratione, animi.
+              </p>
+              <!--fim especialidades-box-->
+            </div>
+            <div class="especialidades-box">
+              <!--icon wordpress-->
+              <i class="bi bi-wordpress"></i>
+              <h3>Blog</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Ratione, animi.
+              </p>
+              <!--fim especialidades-box-->
+            </div>
+
+            <!--fim flex-->
+          </div>
+          <!--fim interface-->
+        </div>
+        <!--fim especialidades-->
+      </section>
+      <!--fim especialidades-->
+
+      <section class="sobre">
+        <div class="interface">
+          <div class="flex">
+            <div class="img-sobre">
+              <img src="images/REC-Logótipo-removebg-preview.png" alt="" />
+            </div>
+            <!--fim-img-sobre-->
+            <div class="txt-sobre">
+              <h2>MUITO PRAZER, <span>MEU NOME É SUELEN FEIJÓ!</span></h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Asperiores mollitia iusto sed eveniet, harum voluptates sint
+                nihil provident nulla deserunt. Eius vel accusantium
+                perspiciatis corporis reiciendis consequuntur numquam voluptatum
+                quis.
+              </p>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Asperiores mollitia iusto sed eveniet, harum voluptates sint
+                nihil provident nulla deserunt. Eius vel accusantium
+                perspiciatis corporis reiciendis consequuntur numquam voluptatum
+                quis.
+              </p>
+              <div class="btn-social">
+                <a href="#"
+                  ><button><i class="bi bi-instagram"></i></button
+                ></a>
+                <a href="#"
+                  ><button><i class="bi bi-linkedin"></i></button
+                ></a>
+                <a href="#"
+                  ><button><i class="bi bi-whatsapp"></i></button
+                ></a>
+              </div>
+            </div>
+            <!--fim-txt-sobre-->
+          </div>
+        </div>
+      </section>
+      <!--fim sobre-->
+
+      <section class="portfolio">
+        <div class="interface">
+          <h2 class="titulo">MEU <span>PORTFOLIO</span></h2>
+          <div class="flex">
+            <div
+              class="img-port"
+              style="background-image: url(images/imagem.jpg)"
+            >
+              <!--div responsavel por escurecer opacidade dos cards de cada projeto e
+                    a frase dentro do cartão que escurece -> overlay-->
+              <div class="overlay">Projeto 1</div>
+            </div>
+
+            <div
+              class="img-port"
+              style="background-image: url(images/imagem.jpg)"
+            >
+              <div class="overlay">Projeto 2</div>
+            </div>
+
+            <div
+              class="img-port"
+              style="background-image: url(images/imagem.jpg)"
+            >
+              <div class="overlay">Projeto 3</div>
+            </div>
+          </div>
+          <!--flex-->
+        </div>
+        <!--interface-->
+      </section>
+      <!--fim portfolio-->
+
+      <section class="formulario">
+        <div class="interface">
+          <h2 class="titulo">FALE <span>COMIGO</span></h2>
+
+          <form action="">
+            <input type="text" name="" id="" placeholder="Seu nome" required />
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Seu melhor email"
+              required
+            />
+            <input type="text" name="" id="" placeholder="Seu celular" />
+            <textarea
+              name=""
+              id=""
+              placeholder="Sua mensagem"
+              required
+            ></textarea>
+            <div class="btn-enviar">
+              <input type="submit" value="ENVIAR" />
+            </div>
+          </form>
+        </div>
+      </section>
+      <!--fim formulario-->
+    </main>
+
+    <footer>
+      <div class="interface">
+        <div class="line-footer">
+          <div class="flex">
+            <div class="logo-footer">
+              <img src="images/REC-Logótipo-removebg-preview.png" alt="" />
+            </div>
+            <!--fim logo-footer-->
+
+            <div class="btn-social">
+              <a href="#"
+                ><button><i class="bi bi-instagram"></i></button
+              ></a>
+              <a href="#"
+                ><button><i class="bi bi-linkedin"></i></button
+              ></a>
+              <a href="#"
+                ><button><i class="bi bi-whatsapp"></i></button
+              ></a>
+            </div>
+            <!--fim btn social-->
+          </div>
+        </div>
+        <!--fim line-footer-->
+
+        <div class="line-footer borda">
+          <p>
+            <i class="bi bi-envelope-fill"
+              ><a href="mailto:suelenfeijobr@gmail.com"
+                >suelenfeijobr@gmail.com</a
+              ></i
+            >
+          </p>
+        </div>
+        <!--fim line-footer-->
+      </div>
+    </footer>
+    <!--fim footer-->
+  </body>
+</html>
